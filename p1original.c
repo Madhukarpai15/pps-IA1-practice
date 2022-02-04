@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int input()
+int input_num()
 {
   int a;
   printf("Enter the number: ");
@@ -21,8 +21,8 @@ void output(int a,int b,int c)
 int main()
 {
   int x,y,sum;
-  x=input();
-  y=input();
+  x=input_num();
+  y=input_num();
   find_sum(&x,&y,&sum);
   output(x,y,sum);
   return 0;

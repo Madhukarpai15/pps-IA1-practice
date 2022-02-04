@@ -22,25 +22,31 @@ warning: Error disabling address space randomization: Operation not permitted
 Breakpoint 1, main () at p1original.c:22
 22  {
 (gdb) n
-24    x=input();
+24    x=input_num();
 (gdb) n
 Enter the number: 5
-25    y=input();
-(gdb) p x
-$1 = 5
+25    y=input_num();
 (gdb) n
 Enter the number: 6
 26    find_sum(&x,&y,&sum);
-(gdb) p y
-$2 = 6
+(gdb) s
+find_sum (a=0x7ffc935ecbec, b=0x7ffc935ecbf0, c=0x7ffc935ecbf4)
+    at p1original.c:13
+13    *c=*a+*b;
 (gdb) n
+14  }
+(gdb) n
+main () at p1original.c:27
 27    output(x,y,sum);
-(gdb) p sum
-$3 = 11
+(gdb) s
+output (a=5, b=6, c=11) at p1original.c:18
+18    printf("The sum of %d and %d is %d",a,b,c);
 (gdb) n
+19  }
+(gdb) n
+main () at p1original.c:28
 28    return 0;
-(gdb) n
-29  }(gdb) c
+(gdb) c
 Continuing.
-The sum of 5 and 6 is 11[Inferior 1 (process 574) exited normally]
+The sum of 5 and 6 is 11[Inferior 1 (process 1034) exited normally]
 (gdb) 
