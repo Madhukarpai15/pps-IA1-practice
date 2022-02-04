@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int input()
+int input_num()
 {
   int a;
   printf("Enter the number: ");
@@ -37,9 +37,9 @@ void output(int a, int b, int c, int largest)
 int main()
 {
   int x,y,z,result;
-  x=input();
-  y=input();
-  z=input();
+  x=input_num();
+  y=input_num();
+  z=input_num();
   result=cmp(x,y,z);
   output(x,y,z,result);
   return 0;

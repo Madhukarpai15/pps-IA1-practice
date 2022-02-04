@@ -20,31 +20,35 @@ Starting program: /home/runner/pps-IA1-practice/a.out
 warning: Error disabling address space randomization: Operation not permitted
 
 Breakpoint 1, main () at p2original.c:40
-40    x=input();
+40    x=input_num();
 (gdb) n
 Enter the number: 5
-41    y=input();
-(gdb) p x
-$1 = 5
+41    y=input_num();
 (gdb) n
-Enter the number: 2
-42    z=input();
-(gdb) p y
-$2 = 2
+Enter the number: 2 
+42    z=input_num();
 (gdb) n
 Enter the number: -1
 43    result=cmp(x,y,z);
-(gdb) p z
-$3 = -1
+(gdb) s
+cmp (a=5, b=2, c=-1) at p2original.c:13
+13    if(a>b && a>c)
 (gdb) n
+15      return a;
+(gdb) n
+30  }
+(gdb) n
+main () at p2original.c:44
 44    output(x,y,z,result);
-(gdb) p result
-$5 = 5
+(gdb) s
+output (a=5, b=2, c=-1, largest=5) at p2original.c:34
+34    printf("The largest number out of %d, %d and %d is: %d",a,b,c,largest);
 (gdb) n
+35  }
+(gdb) n
+main () at p2original.c:45
 45    return 0;
-(gdb) n
-46  }
 (gdb) c
 Continuing.
-The largest number out of 5, 2 and -1 is: 5[Inferior 1 (process 625) exited normally]
+The largest number out of 5, 2 and -1 is: 5[Inferior 1 (process 1158) exited normally]
 (gdb) 
