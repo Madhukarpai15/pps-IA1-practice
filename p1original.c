@@ -8,10 +8,9 @@ int input()
   return a;
 }
 
-int find_sum(int *a,int *b)
+int find_sum(int *a,int *b,int *c)
 {
-  int c;
-  c=*a+*b;
+  *c=*a+*b;
 }
 
 void output(int a,int b,int c)
@@ -24,7 +23,7 @@ int main()
   int x,y,sum;
   x=input();
   y=input();
-  sum=find_sum(&x,&y);
+  find_sum(&x,&y,&sum);
   output(x,y,sum);
   return 0;
 }
